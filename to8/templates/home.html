@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content%}
+    <div class="card">
+        <h3>Welcome {{ request.user }}</h3>
+        {% for foo in all %}
+            <a class="card-body" href="{% url 'details' foo.id %}">{{ foo.title }}</a><br>
+            <h5>{{ foo.date_created }}</h5><hr/>
+        {% endfor %}
+    </div>
+{% endblock %}
